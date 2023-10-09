@@ -1,7 +1,19 @@
+using Exam2V1._0.Models;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+    options.AppendTrailingSlash = true;
+});
+
 builder.Services.AddControllersWithViews();
+
+//Connects database to the information in our file. The file is pathed with the connection string
+builder.Services.AddDbContext<ProductContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("ProductContext")));
 
 var app = builder.Build();
 
