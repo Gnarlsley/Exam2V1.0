@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 
 //Connects database to the information in our file. The file is pathed with the connection string
 builder.Services.AddDbContext<ProductContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("ProductContext")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProductContext")));
 
 var app = builder.Build();
 
