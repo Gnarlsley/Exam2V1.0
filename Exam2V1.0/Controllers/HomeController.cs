@@ -18,7 +18,11 @@ namespace Exam2V1._0.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Product()
+        {
+            return View();
+        }
+        public IActionResult Edit()
         {
             return View();
         }
