@@ -10,16 +10,17 @@ namespace Exam2V1._0.Models
         public int ProductId { get; set; }
 
         //[Required(ErrorMessage = "")]
-        public string Name { get; set; }
+        
         [Required(ErrorMessage = "Please enter a Name.")]
+        public string Name { get; set; }
 
-        public int Quantity { get; set; }
         [Required(ErrorMessage = "Please enter a valid quantity.")]
         [Range(1, 99999, ErrorMessage = "Quantity cannot exceed 99,999.")]
-        public double Price { get; set; }
+        public int Quantity { get; set; }
         [Required(ErrorMessage = "Please enter a valid price.")]
         [Range(1.00, 999999.99, ErrorMessage = "Quantity cannot exceed 999,999.99")]
-        public string Description { get; set; }
+        public double Price { get; set; }
         [Required(ErrorMessage = "Please enter a description.")]
+        public string Description { get; set; }
     }
 }
