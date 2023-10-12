@@ -1,7 +1,36 @@
-﻿@model ProductContext;
-@{
-    ViewData["Title"] = "Product";
-}
-
-<h1>Product</h1>
-
+﻿@model List<Product>
+<a asp-controller="Home" asp-action="Add">Add New Movie</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model == null)
+        {
+            <p>Penbis</p>
+        }
+        else{
+        @foreach (var Product in Model)
+        {
+            <tr>
+                <td>@Product.Name</td>
+                <td>@Product.Quantity</td>
+                <td>@Product.Price</td>
+                <td>@Product.Description</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Edit"
+                       asp-route-id="@Product.ProductId"
+                       asp-route-slug="@Product.Slug">Edit</a>
+                    <a asp-controller="Product" asp-action="Delete"
+                       asp-route-id="@Product.ProductId" asp-route-slug="@Product.Slug">Delete</a>
+                </td>
+            </tr>
+        }}
+    </tbody>
+</table>

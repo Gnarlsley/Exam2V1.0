@@ -6,11 +6,13 @@ namespace Exam2V1._0.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ILogger<HomeController> logger;
+        private readonly ProductContext context;
+        public HomeController(ILogger<HomeController> log, ProductContext ctx)
         {
-            _logger = logger;
+            logger = log;
+            context = ctx;
+
         }
 
         public IActionResult Index()
@@ -20,7 +22,17 @@ namespace Exam2V1._0.Controllers
 
         public IActionResult Product()
         {
-            return View();
+            try
+            {
+                List<Product> products = context.Products.ToList();
+                logger.LogInformation($"Number of products fetched: {products.Count}");
+                return View(products);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error fetching products from the database");
+                throw; // Rethrow the exception for now, you might want to handle it more gracefully in production
+            }
         }
         public IActionResult Edit()
         {

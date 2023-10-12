@@ -22,5 +22,8 @@ namespace Exam2V1._0.Models
         public double Price { get; set; }
         [Required(ErrorMessage = "Please enter a description.")]
         public string Description { get; set; }
+
+        public string Slug =>
+            Name;
     }
 }
