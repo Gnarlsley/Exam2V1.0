@@ -18,5 +18,7 @@ namespace Exam2V1._0.Controllers
             return View(products);
         }
 
+        public IActionResult info() { return View(); }
+
     }
 }
