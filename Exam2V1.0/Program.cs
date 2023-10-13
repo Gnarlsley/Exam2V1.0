@@ -11,7 +11,7 @@ builder.Services.AddRouting(options =>
 
 builder.Services.AddControllersWithViews();
 
-//Connects database to the information in our file. The file is pathed with the connection string
+//Connects database to the information in our file. The file is pathed with the connection string in appsetting.json
 builder.Services.AddDbContext<ProductContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ProductContext")));
 

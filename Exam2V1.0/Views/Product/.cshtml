@@ -1,5 +1,5 @@
 ﻿@model List<Product>
-<a asp-controller="Home" asp-action="Add">Add New Movie</a>
+<a asp-controller="Home" asp-action="Add">Add New Product</a>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -11,17 +11,12 @@
         </tr>
     </thead>
     <tbody>
-        @if (Model == null)
-        {
-            <p>Penbis</p>
-        }
-        else{
         @foreach (var Product in Model)
         {
             <tr>
                 <td>@Product.Name</td>
                 <td>@Product.Quantity</td>
-                <td>@Product.Price</td>
+                <td>$@Product.Price</td>
                 <td>@Product.Description</td>
                 <td>
                     <a asp-controller="Product" asp-action="Edit"
@@ -31,6 +26,6 @@
                        asp-route-id="@Product.ProductId" asp-route-slug="@Product.Slug">Delete</a>
                 </td>
             </tr>
-        }}
+        }
     </tbody>
 </table>

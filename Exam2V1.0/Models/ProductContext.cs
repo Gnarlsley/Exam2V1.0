@@ -22,7 +22,7 @@ namespace Exam2V1._0.Models
                         Name = "Socket Head Cap Screws",
                         Quantity = 100,
                         Price = 18.25,
-                        Description = "A wire can be passed through the bolt head to prevent loosening."
+                        Description = "A wire can be passed through the bolt head to prevent loosening"
                     },
 
                     new Product
@@ -31,7 +31,7 @@ namespace Exam2V1._0.Models
                         Name = "Fiber Optic Cables",
                         Quantity = 10,
                         Price = 1100.11,
-                        Description = "20 meters of cable capable of high-frequency signal transmission in wide bandwidths."
+                        Description = "20 meters of cable capable of high-frequency signal transmission in wide bandwidths"
                     },
                     new Product
                     {
@@ -39,7 +39,7 @@ namespace Exam2V1._0.Models
                         Name = "Dip Switch",
                         Quantity = 5,
                         Price = 4.15,
-                        Description = "Ideal for switching equipment settings; connects to PCB."
+                        Description = "Ideal for switching equipment settings; connects to PCB"
                     },
 
                     new Product
