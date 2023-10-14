@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.VisualBasic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Exam2V1._0.Models
 {
@@ -24,6 +25,6 @@ namespace Exam2V1._0.Models
         public string Description { get; set; }
 
         public string Slug =>
-            Name;
+            Name?.Replace(' ', '-').ToLower() + '-' + Description.Replace(' ', '-').ToLower();
     }
 }
