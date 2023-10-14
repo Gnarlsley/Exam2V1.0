@@ -1,4 +1,12 @@
 ﻿@model List<Product>
+@{
+    ViewBag.Title = "Product Viewer";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="text-center">@ViewBag.Title</h1>
+    </div>
+</div>
 <a asp-controller="Product" asp-action="Add" class="btn btn-primary" style="display: block; width: 100%;">Add New Product</a>
 <form class="form-horizontal">
     @foreach (var Product in Model)
@@ -35,7 +43,7 @@
                 <input value="@Product.Description" readonly class="form-control" />
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-6">
